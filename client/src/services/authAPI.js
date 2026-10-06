@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API_URL = import.meta.env.VITE_API_URL || "https://ecommerce-website-using-full-stack.onrender.com/api";
 
 async function parseResponse(response) {
   const data = await response.json().catch(() => ({}));
