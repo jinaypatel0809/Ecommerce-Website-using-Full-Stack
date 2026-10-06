@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: Inter, Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: #f1f3f6;
+    color: #212121;
+    transition: background-color 200ms, color 200ms;
+  }
+
+  html.dark body {
+    background: #111111;
+    color: #f5f5f5;
+  }
+}
+
+@layer components {
+  .input {
+    @apply mt-2 w-full rounded-lg border border-neutral-300 bg-transparent px-4 py-3 font-normal outline-none transition focus:border-[#2874f0] dark:border-neutral-700;
+  }
+
+  .admin-sidebar-nav {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .admin-sidebar-nav::-webkit-scrollbar {
+    display: none;
+  }
+}
